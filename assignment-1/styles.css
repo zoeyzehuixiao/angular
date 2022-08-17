@@ -1,0 +1,103 @@
+
+.container{
+    margin: auto;
+    max-width: 600px;
+    min-width: 100px;
+    height: auto;
+    width: 50%;
+    text-align:center
+}
+
+
+/*
+
+input form
+
+*/
+form{
+    margin: auto;
+    width: 95%;
+}
+form input{
+    margin: 5px;
+    padding: 5px;
+    min-width: 55px;
+    outline: none;
+    border:1px solid #ccc;
+    border-radius: 4px; 
+}
+input:focus{
+    border: 1px solid #1d5abd;
+}
+#fname{
+    width: calc(100% / 2 - 25px);
+}
+#lname{
+    width:  calc(100% / 2 - 25px);
+}
+#mobile{
+    width: calc(100% - 22px);
+}
+#email{
+    width: calc(100% - 22px);
+}
+#pwd{
+    width:  calc(100% / 2 - 25px);
+}
+#cpwd{
+    width:  calc(100% / 2 - 25px);
+}
+/*
+
+checkbox
+
+*/
+form .checkbox{
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+#checkbox{
+    margin: 0;
+    padding: 0;
+}
+form .checkbox label{
+    min-width: 55px;
+}
+form .checkbox p{
+    align-self: flex-end;
+    padding-left: 40%;
+    text-align: left;
+}
+
+
+/*
+
+buttons
+
+*/
+#reg{
+    background-color: #1d5abd;
+    color: #ffffff;
+    cursor:not-allowed;
+}
+#register{
+    background-color:#1d5abd;
+    color:#ffffff;
+    width: calc(100% / 2 - 25px);
+    min-width: 55px;
+    border-radius: 4px;
+}
+#signIn{
+    background-color:#11aa4cb0;
+    color:#ffffff;
+    width: calc(100% / 2 - 25px);
+    min-width: 55px;
+    border-radius: 6px;
+}
+#register:hover{
+    background-color:#5c94ec;
+}
+#signIn:hover{
+    background-color:#46ed86b0;
+}
