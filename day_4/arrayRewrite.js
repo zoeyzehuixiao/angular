@@ -45,8 +45,8 @@ Array.prototype.myReduce = function(lambda, initialValue){
         if(this.length === 0){
             return initialValue;
         }else{
-            for(element of this){
-                result = lambda(result, element)
+            for(let i = 0; i < this.length; i++){
+                result = lambda(result, this[i], i, this)
             }
             return result;
         }
@@ -57,7 +57,7 @@ Array.prototype.myReduce = function(lambda, initialValue){
             return this[0]
         }else{
             for(let i = 1; i < this.length; i++){
-                result = lambda(result, this[i])
+                result = lambda(result, this[i], i, this)
             }
             return result;
         }
