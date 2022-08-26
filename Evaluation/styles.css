@@ -30,16 +30,23 @@ body {
 .list_container{
     display: flex;
     justify-content: space-around;
+	height: calc(100% - var(--height-header));
+}
+.course_container, .selected_container{
+	border: 2px solid black;
+	
 }
 .course_list, .selected_list{
-	border: 2px solid black;
+	
 	list-style-type: none;
 }
-.couse_list_item{
-	display: block;
-	flex-direction: column;
+
+li:nth-child(odd){
+	background: var(--color-green);
 	border: 1px solid black;
 }
-.course_name{
-	background: var(--color-green)
+li:nth-child(even){
+	background: white;
+	border: 1px solid black;
 }
+
