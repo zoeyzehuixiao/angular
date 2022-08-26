@@ -144,7 +144,7 @@ const Controller = ((model, view) => {
     const submit = () => {
         const element = document.querySelector(view.selectorContainer.submit)
         element.addEventListener('click', eventHandler)
-        function eventHandler(event){
+        function eventHandler(){
             state.submitState = state.courseState.filter((course)=>{
                 return state.focusState.includes(course.courseId)
             })
