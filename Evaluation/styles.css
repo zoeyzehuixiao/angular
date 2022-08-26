@@ -33,11 +33,15 @@ body {
 	height: calc(100% - var(--height-header));
 }
 .course_container, .selected_container{
+	height: 400px;
 	border: 2px solid black;
+	overflow: auto;
 	
 }
+.course_header .selected_header{
+	text-align: center
+}
 .course_list, .selected_list{
-	
 	list-style-type: none;
 }
 
