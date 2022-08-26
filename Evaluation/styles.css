@@ -1,0 +1,45 @@
+
+:root{
+	--height-header: 60px;
+	--color-green:rgb(221, 239, 221);
+}
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  
+}
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;;
+}
+.header {
+	height: var(--height-header);
+	width: 100%;
+  
+	line-height: var(--height-header);
+	padding-left: 10px;
+  
+	font-size: 2rem;
+	text-transform: capitalize;
+	letter-spacing: 2px;
+	text-align: center
+  }
+.list_container{
+    display: flex;
+    justify-content: space-around;
+}
+.course_list, .selected_list{
+	border: 2px solid black;
+	list-style-type: none;
+}
+.couse_list_item{
+	display: block;
+	flex-direction: column;
+	border: 1px solid black;
+}
+.course_name{
+	background: var(--color-green)
+}
