@@ -23,6 +23,10 @@ const View = (() => {
             element.style.backgroundColor = 'deepskyblue'
         }
     }
+    const toggleButton = () => {
+        const element = document.querySelector('#submit')
+        element.disabled = true;
+    }
     const tmp = (data) => { //data is array
         let tmp = '';
         for(const entry of data){
@@ -46,7 +50,7 @@ const View = (() => {
         courseList: '.course_list',
         selectedList: '.selected_list'
     }
-	return{render, focus, tmp, creditTmp, selectorContainer}
+	return{render, focus, toggleButton, tmp, creditTmp, selectorContainer}
 })();
 
 const Model = ((api, view) => {
@@ -98,6 +102,7 @@ const Model = ((api, view) => {
             const tmp = view.tmp(this.#submitState);
             const element = document.querySelector(view.selectorContainer.selectedList)
             view.render(element, tmp)
+            view.toggleButton()
         }
 
 	}
@@ -162,6 +167,7 @@ const Controller = ((model, view) => {
                 state.courseState = state.courseState.filter((course)=>{
                     return !state.focusState.includes(course.courseId)
                 })
+
             }
         }
     }
