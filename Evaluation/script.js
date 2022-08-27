@@ -132,11 +132,21 @@ const Controller = ((model, view) => {
             }else{
                 target = event.target.parentElement;
             }
-            state.focusState = target
-            if(state.focusState.includes(state.courseState[target.id - 1].courseId)){
-                state.credit += state.courseState[target.id - 1].credit
-            }else{
+            
+            
+            if(!state.focusState.includes(state.courseState[target.id - 1].courseId)){
+                console.log(state.courseState[target.id - 1].credit + state.credit)
+                if((state.courseState[target.id - 1].credit + state.credit) > 18){
+                    alert("You can only choose up to 18 credits in one semester")
+                }else{
+                    state.credit += state.courseState[target.id - 1].credit
+                    state.focusState = target
+                }
+                
+            }else if(state.focusState.includes(state.courseState[target.id - 1].courseId)){
+                console.log(state.focusState)
                 state.credit -= state.courseState[target.id - 1].credit
+                state.focusState = target
             }
             
         }
@@ -145,13 +155,14 @@ const Controller = ((model, view) => {
         const element = document.querySelector(view.selectorContainer.submit)
         element.addEventListener('click', eventHandler)
         function eventHandler(){
-            state.submitState = state.courseState.filter((course)=>{
-                return state.focusState.includes(course.courseId)
-            })
-            state.courseState = state.courseState.filter((course)=>{
-                return !state.focusState.includes(course.courseId)
-            })
-
+            if(confirm(`You have chosen ${state.credit} credits for this semester. You cannot change once you submit. Do you want to confirm?`)){
+                state.submitState = state.courseState.filter((course)=>{
+                    return state.focusState.includes(course.courseId)
+                })
+                state.courseState = state.courseState.filter((course)=>{
+                    return !state.focusState.includes(course.courseId)
+                })
+            }
         }
     }
     const bootstrap = () => {
