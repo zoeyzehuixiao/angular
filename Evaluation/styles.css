@@ -1,7 +1,9 @@
 
 :root{
-	--height-header: 60px;
+	--height-header: 70px;
 	--color-green:rgb(221, 239, 221);
+	--height-container: 300px;
+	--width-container: 200px;
 }
 html,
 body {
@@ -18,42 +20,52 @@ body {
 .header {
 	height: var(--height-header);
 	width: 100%;
-  
 	line-height: var(--height-header);
-	padding-left: 10px;
   
-	font-size: 2rem;
+	font-size:2rem;
 	text-transform: capitalize;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	text-align: center
-  }
-.list_container{
+}
+/*flex container*/
+.lists_container{
     display: flex;
     justify-content: space-around;
-	height: calc(100% - var(--height-header));
 }
+/*flex element*/
 .course_container, .selected_container{
-	height: 300px;
-	width:200px;
-	border: 2px solid black;
+	height: var(--height-container);
+	width: var(--width-container);
+	border: 1.5px solid black;
 	overflow: auto;
-	
+	text-align:center;
 }
-.course_header .selected_header{
-	text-align: center
+.course_header, .selected_header{
+	height: calc(calc(var(--height-container) - 3px)/7);
+	line-height: calc(calc(var(--height-container) - 3px)/7);
+	text-transform: capitalize;
 }
 .course_list, .selected_list{
 	list-style-type: none;
 }
-li{
-	text-align:center;
+.course_list_item{
+	height: calc(calc(var(--height-container) - 3px)/7);
+	font-size: 0.75rem;
 }
-li:nth-child(odd){
+.course_list_item:nth-child(odd){
 	background: var(--color-green);
-	border: 1px solid black;
+	border-block: 1px solid black;
+	border-inline: 2px solid black;
 }
-li:nth-child(even){
+.course_list_item:nth-child(even){
 	background: white;
-	border: 1px solid black;
+	border-block: 1px solid black;
+	border-inline: 2px solid black;
+}
+/*counter*/
+.counter_container{
+	height: var(--height-header);
+	line-height: var(--height-header);
+	text-align: center;
 }
 

@@ -22,7 +22,6 @@ const View = (() => {
             if(element.style.backgroundColor === 'deepskyblue'){
                 element.style.backgroundColor = null
             }else{   
-                console.log(element)
                 element.style.backgroundColor = 'deepskyblue'
             }
         },
@@ -139,7 +138,6 @@ const Model = ((api, view) => {
                 this.courseState = this.courseState.filter((course)=>{
                     return !data.includes(course.courseId)
                 })
-                
             }   
         }
 	}
@@ -160,7 +158,6 @@ const Controller = ((model, view) => {
             state.credit = 0
         })
     }
-
     const focusCourse = () => {
         const element = document.querySelector(view.selectorContainer.courseList)
         element.addEventListener('click', eventHandler)
@@ -173,7 +170,6 @@ const Controller = ((model, view) => {
                 target = event.target.parentElement;
             }
             state.updateFocus(target)
-            //state.focusState = target;
         }
     }
     const submitCourses = () => {
@@ -191,5 +187,4 @@ const Controller = ((model, view) => {
 	return {bootstrap}
 })(Model, View);
 
-console.log("in script")
 Controller.bootstrap()
