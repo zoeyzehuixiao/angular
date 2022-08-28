@@ -40,7 +40,7 @@ const View = (() => {
                 tmp += `
                 <li class="course_list_item" id=${entry.courseId}>
                     <div class="course_name">${entry.courseName}</div>
-                    <div class="course_type">${(entry.required == true)? 'Compulsory': 'Elective'}</div>
+                    <div class="course_type">${(entry.required === true)? 'Course Type: Compulsory': 'Course Type: Elective'}</div>
                     <div class="course_credit"> Course Credit: ${entry.credit}</div>
                 </li>
                 `
